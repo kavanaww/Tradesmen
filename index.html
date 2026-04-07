@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saint Charles Tradesmen | Expert Trades & Home Services</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+```
+:root {
+  --bg:           #ede0cc;
+  --bg-card:      #e3d3b8;
+  --bg-dark:      #c9b89a;
+  --text:         #1e1208;
+  --text-mid:     #3d2a14;
+  --text-muted:   #7a5f3e;
+  --brown:        #8B5E3C;
+  --brown-dark:   #6b4427;
+  --brown-light:  #a97040;
+  --border:       rgba(110,70,30,0.18);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* ── TOP BAR ── */
+.top-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  background: var(--brown-dark);
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.top-bar a {
+  color: #f5ede0;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.top-bar a:hover { opacity: 0.75; }
+.top-bar-sep {
+  color: rgba(245,237,224,0.35);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+@media (max-width: 600px) {
+  .top-bar-email,
+  .top-bar-sep { display: none; }
+  .top-bar a { font-size: 0.82rem; }
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 2.2rem; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 3.5rem;
+  background: rgba(237,224,204,0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.14em;
+  color: var(--brown);
+  text-decoration: none;
+  line-height: 1;
+}
+.nav-logo span { color: var(--text-muted); }
+nav ul { display: flex; gap: 2.5rem; list-style: none; }
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.73rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  transition: opacity 0.2s, color 0.2s;
+}
+nav a:hover { opacity: 1; color: var(--brown); }
+.nav-cta {
+  background: var(--brown) !important;
+  color: #f5ede0 !important;
+  opacity: 1 !important;
+  padding: 0.5rem 1.3rem;
+  border-radius: 2px;
+  font-weight: 700 !important;
+}
+.nav-cta:hover { background: var(--brown-light) !important; }
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; top: 2.2rem; }
+  nav ul { display: none; }
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding-top: 7.8rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 55% 70% at 72% 50%, rgba(110,65,25,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 40% at 10% 80%, rgba(110,65,25,0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-divider {
+  position: absolute;
+  top: 0; bottom: 0; left: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent 5%, var(--brown) 30%, var(--brown) 70%, transparent 95%);
+  opacity: 0.1;
+}
+.hero-left {
+  padding: 4rem 4rem 4rem 6rem;
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 0.85s ease both;
+}
+.eyebrow {
+  font-size: 0.67rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--brown);
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 1.8rem; height: 1px;
+  background: var(--brown);
+  flex-shrink: 0;
+}
+.hero-h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.6rem, 6.5vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+.hero-h1 em {
+  font-style: italic;
+  font-family: 'DM Serif Display', serif;
+  color: var(--brown);
+  font-size: 0.85em;
+}
+.hero-sub {
+  margin-top: 1.8rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-mid);
+  max-width: 40ch;
+  font-weight: 400;
+}
+.hero-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+.btn-primary {
+  background: var(--brown);
+  color: #f5ede0;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--brown-light); transform: translateY(-1px); }
+.btn-ghost {
+  color: var(--text-mid);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.btn-ghost:hover { opacity: 1; }
+.btn-ghost::after { content: '→'; font-size: 1rem; }
+
+.hero-right {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 5rem 4rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeUp 0.85s 0.15s ease both;
+}
+.craft-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 430px;
+}
+.craft-cell {
+  background: var(--bg);
+  padding: 2.2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: background 0.25s;
+}
+.craft-cell:hover { background: var(--bg-card); }
+.craft-icon { font-size: 1.7rem; line-height: 1; }
+.craft-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+.craft-detail {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-mid);
+  font-weight: 400;
+}
+
+/* ── MARQUEE ── */
+.marquee-wrap {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+  overflow: hidden;
+  padding: 0.8rem 0;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.marquee-item {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  color: var(--brown);
+  padding: 0 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 2.2rem;
+  white-space: nowrap;
+}
+.marquee-item::after {
+  content: '◆';
+  font-size: 0.32rem;
+  color: rgba(110,70,30,0.3);
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ── SHARED SECTION STYLES ── */
+.section-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--brown);
+  font-weight: 500;
+  margin-bottom: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 1.4rem; height: 1px;
+  background: var(--brown);
+  flex-shrink: 0;
+}
+.section-h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  line-height: 1.18;
+  color: var(--text);
+  margin-bottom: 1.4rem;
+}
+.section-h2 em { color: var(--brown); font-style: italic; }
+.body-text {
+  font-size: 0.97rem;
+  line-height: 1.82;
+  color: var(--text-mid);
+  max-width: 46ch;
+  font-weight: 400;
+}
+.body-text + .body-text { margin-top: 1rem; }
+
+/* ── ABOUT ── */
+#about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border);
+}
+.about-left {
+  padding: 7rem 5rem 7rem 6rem;
+  border-right: 1px solid var(--border);
+}
+.about-right {
+  padding: 7rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.stat-row {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.stat-row:first-child { padding-top: 0; }
+.stat-row:last-child { border-bottom: none; padding-bottom: 0; }
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  color: var(--brown);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+
+/* ── SERVICES ── */
+#services {
+  padding: 8rem 6rem;
+  border-top: 1px solid var(--border);
+}
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+  gap: 2rem;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.service-card {
+  background: var(--bg);
+  padding: 2.8rem 2.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s;
+}
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--brown);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.service-card:hover { background: var(--bg-card); }
+.service-card:hover::after { transform: scaleX(1); }
+.svc-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  color: rgba(110,70,30,0.35);
+  margin-bottom: 1.3rem;
+}
+.svc-icon {
+  width: 2.8rem; height: 2.8rem;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 1.3rem;
+  transition: border-color 0.25s;
+}
+.service-card:hover .svc-icon { border-color: var(--brown); }
+.svc-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  margin-bottom: 0.8rem;
+}
+.svc-body {
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: var(--text-mid);
+  font-weight: 400;
+}
+.svc-tags {
+  margin-top: 1.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+}
+.tag {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.26rem 0.65rem;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 1px;
+  transition: border-color 0.25s, color 0.25s;
+}
+.service-card:hover .tag { border-color: rgba(110,70,30,0.4); color: var(--brown); }
+
+/* ── WHY ── */
+#why {
+  border-top: 1px solid var(--border);
+  padding: 8rem 6rem;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+.pillars { display: flex; flex-direction: column; }
+.pillar {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 1.4rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.pillar:first-child { padding-top: 0; }
+.pillar:last-child { border-bottom: none; }
+.pillar-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  color: rgba(110,70,30,0.18);
+  line-height: 1;
+}
+.pillar-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  color: var(--text);
+  margin-bottom: 0.45rem;
+}
+.pillar-text {
+  font-size: 0.92rem;
+  line-height: 1.78;
+  color: var(--text-mid);
+  font-weight: 400;
+}
+.why-aside { position: sticky; top: 8rem; }
+.quote-block {
+  border-left: 2px solid var(--brown);
+  padding: 1.8rem 1.8rem 1.8rem 2.2rem;
+  background: var(--bg-card);
+}
+.quote-text {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: var(--text);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.quote-attr {
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brown);
+  font-weight: 500;
+}
+.area-box {
+  margin-top: 1.8rem;
+  padding: 1.6rem;
+  border: 1px solid var(--border);
+}
+.area-title {
+  font-size: 0.61rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brown);
+  font-weight: 500;
+  margin-bottom: 0.9rem;
+}
+.area-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.chip {
+  font-size: 0.72rem;
+  color: var(--text-mid);
+  padding: 0.28rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 1px;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+}
+
+/* ── PROCESS ── */
+#process {
+  border-top: 1px solid var(--border);
+  padding: 8rem 6rem;
+}
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 3.5rem;
+}
+.process-step {
+  background: var(--bg);
+  padding: 2.8rem 2rem;
+}
+.step-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4.5rem;
+  color: rgba(110,70,30,0.07);
+  line-height: 1;
+  margin-bottom: 0.8rem;
+}
+.step-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  margin-bottom: 0.65rem;
+}
+.step-text {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--text-mid);
+  font-weight: 400;
+}
+
+/* ── CONTACT ── */
+#contact {
+  border-top: 1px solid var(--border);
+  padding: 9rem 6rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#contact::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(110,65,25,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--brown);
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+}
+.cta-h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.2rem, 5.5vw, 5.5rem);
+  letter-spacing: 0.03em;
+  line-height: 0.95;
+  color: var(--text);
+  max-width: 20ch;
+  margin: 0 auto 1.4rem;
+}
+.cta-h2 em {
+  color: var(--brown);
+  font-style: italic;
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.78em;
+}
+.cta-sub {
+  font-size: 1rem;
+  color: var(--text-mid);
+  max-width: 48ch;
+  margin: 0 auto 2.8rem;
+  line-height: 1.75;
+  font-weight: 400;
+}
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.cta-phone {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  color: var(--brown);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.cta-phone:hover { color: var(--brown-light); }
+.cta-div { color: rgba(110,70,30,0.3); font-size: 1.3rem; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-card);
+  padding: 2.2rem 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  color: var(--brown);
+}
+.footer-logo span { color: var(--text-muted); }
+.footer-copy {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+.footer-domain {
+  font-size: 0.68rem;
+  color: var(--brown);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; padding: 8rem 1.5rem 4rem; }
+  .hero-left { padding: 0; }
+  .hero-divider { display: none; }
+  .hero-right { padding: 3rem 0 0; justify-content: flex-start; }
+  .craft-grid { max-width: 100%; }
+  #about { grid-template-columns: 1fr; }
+  .about-left { padding: 5rem 1.5rem 3rem; border-right: none; border-bottom: 1px solid var(--border); }
+  .about-right { padding: 3rem 1.5rem 5rem; }
+  #services { padding: 5rem 1.5rem; }
+  .services-header { flex-direction: column; align-items: flex-start; }
+  .services-grid { grid-template-columns: 1fr; }
+  #why { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
+  .why-aside { position: static; }
+  #process { padding: 5rem 1.5rem; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  #contact { padding: 5rem 1.5rem; }
+  footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+}
+@media (max-width: 500px) {
+  .process-steps { grid-template-columns: 1fr; }
+}
+```
+
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+
+  <div class="top-bar">
+    <a href="tel:+16364059675">📞 (636) 405-WORK</a>
+    <span class="top-bar-sep">|</span>
+    <a href="mailto:team@tradesmen.tools" class="top-bar-email">✉ team@tradesmen.tools</a>
+  </div>
+
+  <!-- NAV -->
+
+  <nav>
+    <a href="#" class="nav-logo">SAINT CHARLES <span>TRADESMEN</span></a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="hero-divider"></div>
+    <div class="hero-left">
+      <p class="eyebrow">St. Charles, Missouri</p>
+      <h1 class="hero-h1">
+        BUILT TO<br>
+        <em>Last.</em><br>
+        FINISHED<br>
+        TO <em>Impress.</em>
+      </h1>
+      <p class="hero-sub">Expert flooring, painting, and remodeling in St. Charles and the surrounding area. Every job done right — on time, on budget, with craftsmen you can trust.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get a Free Estimate</a>
+        <a href="#services" class="btn-ghost">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="craft-grid">
+        <div class="craft-cell">
+          <div class="craft-icon">🪵</div>
+          <div class="craft-name">Flooring</div>
+          <div class="craft-detail">Hardwood, LVP, tile &amp; carpet done to spec.</div>
+        </div>
+        <div class="craft-cell">
+          <div class="craft-icon">🖌️</div>
+          <div class="craft-name">Painting</div>
+          <div class="craft-detail">Interior and exterior. Clean lines, zero mess.</div>
+        </div>
+        <div class="craft-cell">
+          <div class="craft-icon">🛁</div>
+          <div class="craft-name">Remodeling</div>
+          <div class="craft-detail">Bathrooms, kitchens, and spaces transformed.</div>
+        </div>
+        <div class="craft-cell">
+          <div class="craft-icon">🔨</div>
+          <div class="craft-name">Handyman</div>
+          <div class="craft-detail">The fixes that make a home feel complete.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">Flooring</span>
+      <span class="marquee-item">Interior Painting</span>
+      <span class="marquee-item">Exterior Painting</span>
+      <span class="marquee-item">Bathroom Remodeling</span>
+      <span class="marquee-item">Kitchen Updates</span>
+      <span class="marquee-item">Hardwood Installation</span>
+      <span class="marquee-item">LVP &amp; Laminate</span>
+      <span class="marquee-item">Tile Work</span>
+      <span class="marquee-item">Handyman Services</span>
+      <span class="marquee-item">St. Charles County</span>
+      <span class="marquee-item">Flooring</span>
+      <span class="marquee-item">Interior Painting</span>
+      <span class="marquee-item">Exterior Painting</span>
+      <span class="marquee-item">Bathroom Remodeling</span>
+      <span class="marquee-item">Kitchen Updates</span>
+      <span class="marquee-item">Hardwood Installation</span>
+      <span class="marquee-item">LVP &amp; Laminate</span>
+      <span class="marquee-item">Tile Work</span>
+      <span class="marquee-item">Handyman Services</span>
+      <span class="marquee-item">St. Charles County</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="about-left reveal">
+      <p class="section-label">Who We Are</p>
+      <h2 class="section-h2">Tradesmen who take pride in their work</h2>
+      <p class="body-text">Saint Charles Tradesmen is a local trades company built on one principle: quality work, every time. We're not a franchise. We're not a call center. We're craftsmen rooted in St. Charles who show up, do the job right, and stand behind our work.</p>
+      <p class="body-text">Whether you need a fresh coat of paint, new floors throughout your home, or a full bathroom remodel — we bring the same standard of care to every project, big or small.</p>
+    </div>
+    <div class="about-right reveal">
+      <div class="stat-row">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Satisfaction Guaranteed</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-num">LOCAL</div>
+        <div class="stat-label">St. Charles County Based</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-num">FREE</div>
+        <div class="stat-label">Estimates — No Obligation</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services">
+    <div class="services-header reveal">
+      <div>
+        <p class="section-label">What We Do</p>
+        <h2 class="section-h2">Our <em>Services</em></h2>
+      </div>
+      <a href="#contact" class="btn-primary" style="white-space:nowrap;">Request a Quote</a>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="svc-num">01</div>
+        <div class="svc-icon">🪵</div>
+        <div class="svc-title">Flooring</div>
+        <p class="svc-body">From hardwood and engineered wood to luxury vinyl plank, laminate, tile, and carpet — we install it all with precision and care.</p>
+        <div class="svc-tags">
+          <span class="tag">Hardwood</span><span class="tag">LVP</span><span class="tag">Tile</span><span class="tag">Carpet</span><span class="tag">Laminate</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="svc-num">02</div>
+        <div class="svc-icon">🖌️</div>
+        <div class="svc-title">Painting</div>
+        <p class="svc-body">Interior and exterior painting done cleanly and professionally. We prep properly, use quality materials, and leave every job site spotless.</p>
+        <div class="svc-tags">
+          <span class="tag">Interior</span><span class="tag">Exterior</span><span class="tag">Trim &amp; Doors</span><span class="tag">Cabinets</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="svc-num">03</div>
+        <div class="svc-icon">🛁</div>
+        <div class="svc-title">Remodeling</div>
+        <p class="svc-body">Bathroom remodels, kitchen refreshes, and room transformations. We handle the details so you don't have to coordinate a dozen contractors.</p>
+        <div class="svc-tags">
+          <span class="tag">Bathrooms</span><span class="tag">Kitchens</span><span class="tag">Basements</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="svc-num">04</div>
+        <div class="svc-icon">🔨</div>
+        <div class="svc-title">Handyman</div>
+        <p class="svc-body">The list of things your home needs — we handle it. Drywall repair, fixture installs, trim work, caulking, doors, and more.</p>
+        <div class="svc-tags">
+          <span class="tag">Drywall</span><span class="tag">Trim</span><span class="tag">Fixtures</span><span class="tag">Repairs</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="svc-num">05</div>
+        <div class="svc-icon">🪟</div>
+        <div class="svc-title">Interior Finishing</div>
+        <p class="svc-body">Crown molding, baseboards, wainscoting, and architectural detail work that elevates the finished look of any room.</p>
+        <div class="svc-tags">
+          <span class="tag">Molding</span><span class="tag">Wainscoting</span><span class="tag">Trim</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="svc-num">06</div>
+        <div class="svc-icon">📋</div>
+        <div class="svc-title">Free Estimates</div>
+        <p class="svc-body">Not sure where to start? We'll walk through your space, help prioritize the work, and give you a clear, honest estimate with no pressure.</p>
+        <div class="svc-tags">
+          <span class="tag">No Obligation</span><span class="tag">Written Quote</span><span class="tag">Planning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+
+  <section id="why">
+    <div class="why-main reveal">
+      <p class="section-label">Why Saint Charles Tradesmen</p>
+      <h2 class="section-h2" style="margin-bottom:2.8rem;">The standard <em>matters</em></h2>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-num">01</div>
+          <div>
+            <div class="pillar-title">Quality over speed</div>
+            <p class="pillar-text">We don't cut corners to close a job faster. Every surface, every seam, every edge gets the attention it deserves. You'll see the difference.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">02</div>
+          <div>
+            <div class="pillar-title">Straight talk, fair prices</div>
+            <p class="pillar-text">Our estimates are detailed and honest. No surprise charges, no scope creep without your approval. You'll always know what you're paying for.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">03</div>
+          <div>
+            <div class="pillar-title">We respect your home</div>
+            <p class="pillar-text">We protect your surfaces, clean up after ourselves, and treat your space like it's our own. Professionalism from first call to final walkthrough.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">04</div>
+          <div>
+            <div class="pillar-title">Local and accountable</div>
+            <p class="pillar-text">We live and work in St. Charles. Our reputation is local. If something's not right, we make it right — because we'll see you around town.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-aside reveal">
+      <div class="quote-block">
+        <p class="quote-text">"We don't just finish the job — we finish it right. That's the only way we know how to work."</p>
+        <p class="quote-attr">— Saint Charles Tradesmen</p>
+      </div>
+      <div class="area-box">
+        <p class="area-title">Service Area</p>
+        <div class="area-chips">
+          <span class="chip">St. Charles</span>
+          <span class="chip">O'Fallon</span>
+          <span class="chip">Wentzville</span>
+          <span class="chip">St. Peters</span>
+          <span class="chip">Lake Saint Louis</span>
+          <span class="chip">Cottleville</span>
+          <span class="chip">Chesterfield</span>
+          <span class="chip">St. Louis Metro</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+
+  <section id="process">
+    <div class="reveal">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-h2">Simple process.<br><em>Serious results.</em></h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-num">1</div>
+        <div class="step-title">Reach Out</div>
+        <p class="step-text">Call, text, or email us. Tell us what you need and where you're located. We respond quickly.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">2</div>
+        <div class="step-title">Free Estimate</div>
+        <p class="step-text">We come to your home, assess the project, and give you a clear written estimate. No vague ballparks. No pressure to commit.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">3</div>
+        <div class="step-title">We Get to Work</div>
+        <p class="step-text">Scheduled on your timeline. Our crew shows up on time, works cleanly, and keeps you informed throughout.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">4</div>
+        <div class="step-title">Final Walkthrough</div>
+        <p class="step-text">We walk the job with you before closing out. If anything needs attention, we handle it. You don't pay until you're satisfied.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <p class="cta-label">Get Started Today</p>
+    <h2 class="cta-h2">READY FOR A <em>Project</em> DONE RIGHT?</h2>
+    <p class="cta-sub">Free estimates, no obligation. We serve St. Charles County and the surrounding St. Louis metro area. Let's talk about what your home needs.</p>
+    <div class="cta-actions">
+      <a href="tel:+16364059675" class="cta-phone">(636) 405-WORK</a>
+      <span class="cta-div">|</span>
+      <a href="mailto:team@tradesmen.tools" class="btn-primary">team@tradesmen.tools</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="footer-logo">SAINT CHARLES <span>TRADESMEN</span></div>
+    <div class="footer-copy">&copy; 2026 Saint Charles Tradesmen. All rights reserved.</div>
+    <div class="footer-domain">tradesmen.tools</div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
